@@ -28,7 +28,6 @@ public class Frame extends JFrame {
                     textArea.append(testoTextField + "\n");
                     textField.setText("");
                 }
-
             }
         });
 
