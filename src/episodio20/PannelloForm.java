@@ -1,4 +1,4 @@
-package episodio19;
+package episodio20;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -134,6 +134,13 @@ public class PannelloForm extends JPanel {
         // Color Chooser
         labelColor = new JLabel("Colore auto: ");
         buttonColor = new JButton("Seleziona il colore");
+        buttonColor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Color colore = JColorChooser.showDialog(new JFrame(), "Seleziona il colore", Color.BLACK);
+                buttonColor.setBackground(colore);
+            }
+        });
 
         // Bottone
         aggiungi = new JButton("Aggiungi!");
@@ -150,8 +157,10 @@ public class PannelloForm extends JPanel {
                 String alimentazione = menuAlimentazione.getSelectedItem().toString();
                 int numeroPosti = (int) spinnerPosti.getValue();
                 int cilindrata = sliderCilindrata.getValue();
+                int colore =  buttonColor.getBackground().getRGB();
 
-                FormEvent formEvent = new FormEvent(this, marca, modello, vendita, targa, cambio, bagagliaio, alimentazione, numeroPosti, cilindrata );
+
+                FormEvent formEvent = new FormEvent(this, marca, modello, vendita, targa, cambio, bagagliaio, alimentazione, numeroPosti, cilindrata, colore );
 
                 if (formListener != null) {
                     formListener.formEventListener(formEvent);
