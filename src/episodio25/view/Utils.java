@@ -1,4 +1,4 @@
-package episodio25.concessionaria.view;
+package episodio25.view;
 
 import java.io.File;
 

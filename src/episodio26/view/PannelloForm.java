@@ -1,4 +1,4 @@
-package episodio25.concessionaria.view;
+package episodio26.view;
 
 import javax.swing.*;
 import javax.swing.border.Border;

@@ -1,4 +1,4 @@
-package episodio25.concessionaria.model;
+package episodio26.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +12,12 @@ public class Database {
 
    public void addAuto(Auto auto) {
        automobili.add(auto);
+       System.out.println(auto.toString());
    }
 
    public List<Auto> getAutomobili() {
        return automobili;
    }
+
+
 }

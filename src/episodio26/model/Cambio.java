@@ -1,4 +1,4 @@
-package episodio25.concessionaria.model;
+package episodio26.model;
 
 public enum Cambio {
     MANUALE,

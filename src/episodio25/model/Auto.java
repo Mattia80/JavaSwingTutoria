@@ -1,25 +1,21 @@
-package episodio25.concessionaria.view;
+package episodio25.model;
 
-import java.util.EventObject;
-
-public class FormEvent extends EventObject {
+public class Auto {
+    private static int contatore = 0;
+    private int id;
     private String marca;
     private String modello;
     private boolean vendita;
     private String targa;
-    private String cambio;
-    private int bagagliaio;
+    private Cambio cambio;
+    private Bagagliaio bagagliaio;
     private String alimentazione;
     private int numeroPosti;
     private int cilindrata;
     private int colore;
 
-    public FormEvent(Object source) {
-        super(source);
-    }
-
-    public FormEvent(Object source, String marca, String modello, boolean vendita, String targa, String cambio, int bagagliaio, String alimentazione, int numeroPosti, int cilindrata, int colore) {
-        super(source);
+    public Auto(String marca, String   modello, boolean vendita, String targa, Cambio cambio, Bagagliaio bagagliaio, String alimentazione, int numeroPosti, int cilindrata, int colore) {
+        this.id = contatore;
         this.marca = marca;
         this.modello = modello;
         this.vendita = vendita;
@@ -30,12 +26,15 @@ public class FormEvent extends EventObject {
         this.numeroPosti = numeroPosti;
         this.cilindrata = cilindrata;
         this.colore = colore;
+        contatore++;
     }
 
-    public FormEvent(Object source, String marca, String modello) {
-        super(source);
-        this.marca = marca;
-        this.modello = modello;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMarca() {
@@ -70,19 +69,19 @@ public class FormEvent extends EventObject {
         this.targa = targa;
     }
 
-    public String getCambio() {
+    public Cambio getCambio() {
         return cambio;
     }
 
-    public void setCambio(String cambio) {
+    public void setCambio(Cambio cambio) {
         this.cambio = cambio;
     }
 
-    public int getBagagliaio() {
+    public Bagagliaio getBagagliaio() {
         return bagagliaio;
     }
 
-    public void setBagagliaio(int bagagliaio) {
+    public void setBagagliaio(Bagagliaio bagagliaio) {
         this.bagagliaio = bagagliaio;
     }
 
@@ -116,5 +115,13 @@ public class FormEvent extends EventObject {
 
     public void setColore(int colore) {
         this.colore = colore;
+    }
+
+    public String toString() {
+        return "Auto{" +
+                "marca='" + marca + '\'' +
+                ", modello='" + modello + '\'' +
+                ", targa=" + targa +
+                '}';
     }
 }
