@@ -1,9 +1,11 @@
-package episodio26.controller;
+package episodio27.controller;
 
-import episodio26.model.Auto;
-import episodio26.model.Bagagliaio;
-import episodio26.model.Cambio;
-import episodio26.model.Database;
+import episodio27.model.Auto;
+import episodio27.model.Bagagliaio;
+import episodio27.model.Cambio;
+import episodio27.model.Database;
+
+import java.util.List;
 
 public class Controller {
 
@@ -14,9 +16,9 @@ public class Controller {
                         int colore) {
         // Conversione Cambio
         Cambio cambio = null;
-        if (cambioString.equals("manuale")) {
+        if (cambioString.equals("Manuale")) {
             cambio = Cambio.MANUALE;
-        } else if (cambioString.equals("automatico")) {
+        } else if (cambioString.equals("Automatico")) {
             cambio = Cambio.AUTOMATICO;
         }
 
@@ -39,5 +41,9 @@ public class Controller {
 
         // Aggiungiamo l'auto nel database
         db.addAuto(auto);
+    }
+
+    public List<episodio27.model.Auto> getAutomobili() {
+        return db.getAutomobili();
     }
 }
